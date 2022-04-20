@@ -29,7 +29,7 @@ export abstract class ServiceRequestsBase {
         try {
             const response = await this.channel.request(this.target, entity, params, type);
             if (!response) {
-                throw 'Server is not available';
+                throw 'Server is not available 5';
             }
             const payload: IMessageResponse<T> = response.payload;
             if (payload.error) {

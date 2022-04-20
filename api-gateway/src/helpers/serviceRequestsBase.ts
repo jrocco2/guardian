@@ -29,7 +29,7 @@ export abstract class ServiceRequestsBase {
         try {
             const response: IMessageResponse<T> = (await this.channel.request(this.target, entity, params, type)).payload;
             if (!response) {
-                throw 'Server is not available';
+                throw 'Server is not available 2';
             }
             if (response.error) {
                 throw response.error;
@@ -44,7 +44,7 @@ export abstract class ServiceRequestsBase {
         try {
             const response = (await this.channel.request(this.target, entity, params, type)).payload;
             if (!response) {
-                throw 'Server is not available';
+                throw 'Server is not available 3';
             }
             return response;
         } catch (e) {

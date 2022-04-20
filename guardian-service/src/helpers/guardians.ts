@@ -49,7 +49,7 @@ export class Guardians {
         try {
             const response: IMessageResponse<T> = (await this.channel.request(this.target, entity, params, type)).payload;
             if (!response) {
-                throw 'Server is not available';
+                throw 'Server is not available 4';
             }
             if (response.error) {
                 throw response.error;
