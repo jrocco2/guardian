@@ -43,5 +43,15 @@ export const fixtures = async function (): Promise<void> {
         });
         result = await usersRepository.save(user);
         console.log(result, crypto.createHash('sha1').update(Math.random().toString()).digest('hex'));
+
+        user = usersRepository.create({
+            username: 'Registry',
+            password: crypto.createHash('sha256').update('test').digest('hex'),
+            walletToken: crypto.createHash('sha1').update(Math.random().toString()).digest('hex'),
+            role: UserRole.USER
+        });
+        result = await usersRepository.save(user);
+        console.log(result, crypto.createHash('sha1').update(Math.random().toString()).digest('hex'));
+
     }
 }
